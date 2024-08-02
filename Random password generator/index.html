@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: cursive;
+        }
+
+        :root {
+            --primary-color: #011F3C;
+            --secondary-color: #017C4D;
+        }
+
+        main {
+            background-image: linear-gradient(150deg,
+                    hsl(209deg 97% 12%) 49%,
+                    hsl(200deg 100% 15%) 73%,
+                    hsl(188deg 100% 16%) 83%,
+                    hsl(171deg 100% 18%) 89%,
+                    hsl(129deg 30% 32%) 93%,
+                    hsl(69deg 34% 35%) 96%,
+                    hsl(38deg 43% 39%) 98%,
+                    hsl(17deg 41% 40%) 99%,
+                    hsl(352deg 36% 38%) 100%,
+                    hsl(323deg 35% 30%) 100%,
+                    hsl(267deg 31% 26%) 100%,
+                    hsl(209deg 98% 16%) 100%);
+            height: 100vh;
+            padding: 5vw 3vw;
+        }
+
+        h1 {
+            font-size: 4.5vw;
+            margin-top: 7vw;
+            color: white;
+        }
+
+        h1 span {
+            border-bottom: .5vw solid var(--secondary-color);
+            padding-bottom: 1.5vw;
+            color: var(--secondary-color);
+        }
+
+        .row {
+            margin-bottom: 3vw;
+            background-color: white;
+            width: 55%;
+            margin-top: 5vw;
+            display: inline-flex;
+            align-items: center;
+            height: 4.5vw;
+            border-radius: .5vw;
+            padding: 0 1vw;
+        }
+
+        .row svg {
+            cursor: pointer;
+            height: 100%;
+            height: 100%;
+        }
+
+        .row input {
+            width: 100%;
+            border-radius: .5vw;
+            border: none;
+            height: 100%;
+            outline: none;
+            padding: 5px;
+            font-size: 1.7vw;
+            font-family: sans-serif;
+        }
+
+        #passwordLength {
+            width: 5%;
+            text-align: center;
+            height: 4.5vw;
+            border-radius: .4vw;
+            border: none;
+            outline: none;
+            margin-left: 1vw;
+            font-weight: bold;
+            font-size: 1.6vw;
+            color: var(--primary-color);
+        }
+
+        button {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            font-size: 1.7vw;
+            font-weight: bold;
+            background-color: var(--secondary-color);
+            border: none;
+            padding: 1vw;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #015f3b;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Generate a <br><span> Random Password</span></h1>
+        <div class="row"><input type="text" placeholder="Password"><svg xmlns="http://www.w3.org/2000/svg" height="34"
+                viewBox="0 -960 960 960" width="34">
+                <path fill="#017C4D"
+                    d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z" />
+            </svg></div>
+        <input type="text" id="passwordLength" placeholder="Length" value="12">
+        <button><svg xmlns="http://www.w3.org/2000/svg" height="34" viewBox="0 -960 960 960" width="34">
+                <path fill="white"
+                    d="m280-80 160-300-320-40 480-460h80L520-580l320 40L360-80h-80Zm222-247 161-154-269-34 63-117-160 154 268 33-63 118Zm-22-153Z" />
+            </svg> Generate Password</button>
+    </main>
+
+
+    <script>
+        let input = document.querySelector(".row input");
+        let button = document.querySelector("button");
+        let copyButton = document.querySelector(".row svg")
+        let passwordLength = document.querySelector("#passwordLength");
+
+        const lowerChars = "abcdefghijklmnopqrstuvwxyz";
+        const upperChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const specialChars = "!@#$%^&*()_+-=[]{}|;:,.<>/?";
+        const numbers = "0123456789";
+        const allChars = lowerChars + upperChars + specialChars + numbers;
+
+        button.addEventListener("click", generatePassword)
+        copyButton.addEventListener("click", copyPassword)
+
+        function generatePassword() {
+            const length = passwordLength.value;
+            let password = "";
+
+            password += upperChars[Math.floor(Math.random() * upperChars.length)];
+            password += lowerChars[Math.floor(Math.random() * lowerChars.length)];
+            password += numbers[Math.floor(Math.random() * numbers.length)];
+            password += specialChars[Math.floor(Math.random() * specialChars.length)];
+
+            while (password.length < length) {
+                password += allChars[Math.floor(Math.random() * allChars.length)];
+            }
+
+            input.value = password;
+        }
+
+        function copyPassword() {
+            input.select();
+            document.execCommand("copy");
+            alert("Copied to clipboard! ")
+        }
+
+    </script>
+
+</body>
+
+</html>
