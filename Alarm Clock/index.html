@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="clockBox">
+            <img src="assets/clock.svg" alt="">
+            <span id="currentTime">00:00:00 PM</span>
+            <div class="alarmTime">
+                <select name="Hour" id="">
+                    <option value="Hour" selected hidden>Hour</option>
+                </select>
+                <select name="Minute" id="">
+                    <option value="Minute"  selected hidden>Minute</option>
+                </select>
+                <select name="PM" id="">
+                    <option value="AM/PM" selected hidden>AM / PM</option>
+                    <option value="PM">PM</option>
+                    <option value="AM">AM</option>
+                </select>
+            </div>
+            <button>Set Alarm</button>
+        </div>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+</html>

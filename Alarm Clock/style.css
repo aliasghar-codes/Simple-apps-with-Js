@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+::-webkit-scrollbar{
+    width: 10px;
+    overflow: hidden;
+    background-color: white;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgb(44, 39, 39);
+    border-radius: 15px;
+}
+main{
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(0, 183, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.clockBox{
+    background-color: antiquewhite;
+    width: 35vw;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 3vw;
+    box-shadow: 3px 5px 14px 0px #2d2828, inset 4px 4px 17px 0px #2d2828;
+}
+.clockBox img{
+    width: 30%;
+}
+button{
+    width: 100%;
+    background-color: rgb(0, 139, 194);
+    color: white;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding: .8vw;
+    font-weight: bold;
+    font-size: 1.3vw;
+    border-radius: .3vw;
+}
+button:hover{
+    background-color: rgb(0, 98, 137);
+}
+#currentTime{
+    font-weight: bold;
+    font-family: sans-serif;
+    margin-top: 3vw;
+    font-size: 3vw;
+}
+.alarmTime select{
+    margin: 3vw .3vw;
+    padding: 1vw 1.3vw;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1.2vw;
+    font-weight: bold;
+    cursor: pointer;
+}
