@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+}
+.container{
+    width: 80vmin;
+    background-color: rgb(38, 35, 35);
+    color: white;
+    border-radius: 5px;
+}
+.container h3{
+    display: inline-block;
+    cursor: pointer;
+    padding: 2rem;
+}
+.card{
+    display: none;
+    padding: 2rem;
+    border-radius: 5px;
+}
+.disable{
+    display: none;
+}
+.active{
+    display: block;
+    background-color: rgb(29, 27, 27);
+}
+h3.active{
+    color: rgb(148, 148, 255);
+}
+.card p{
+    line-height: 1.7rem;
+    font-size: 1.2rem;
+    margin-top: 2vw;
+}
+
+/* ******************************************** */
+
+.container-two{
+    padding: 4vw 8vw;
+    overflow: hidden;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container-two h3{
+    display: inline-block;
+    margin-left: 50px;
+    cursor: pointer;
+    margin-bottom: 2vw;
+}
+.container-two h3:hover{
+    color: orange;
+}
+.wraps{
+    margin-top: 7vw;
+    display: flex;
+    gap: 50px;
+    transition: .2s;
+    width: 85%;
+    position: absolute;
+    transform: translateX(120%);
+}
+#ht{
+    transform: translateX(0%);
+}
+.wraps button{
+    background-color: orange;
+    padding: 15px 20px;
+    border-radius: 30px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 1.3rem;
+    border: none;
+    cursor: pointer;
+    transition: .3s ease;
+}
+.wraps button:hover{
+    background-color: rgb(255, 186, 59);
+}
+.right img{
+    width: 500px;
+    border-radius: 10px;
+}
+.wraps h2{
+    margin-bottom: 3vw;
+}
+.wraps p{
+    line-height: 1.5rem;
+    margin-bottom: 3vw;
+}
